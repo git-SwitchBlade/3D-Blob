@@ -7,7 +7,6 @@ let width,
     material, 
     icosahedron, 
     ambientLight,
-    lights2,
     lights;
 
 width = window.innerWidth;
@@ -28,10 +27,7 @@ function init(){
 
   // Geometry
   var sphere_geometry = new THREE.SphereGeometry(1, 128, 128);
-  var material = new THREE.MeshStandardMaterial({
-    roughness: 0.1,
-    metalness: 0.8
-  });
+  var material = new THREE.MeshStandardMaterial();
 
   var sphere = new THREE.Mesh(sphere_geometry, material);
   scene.add(sphere);
@@ -41,10 +37,8 @@ function init(){
   lights = new THREE.PointLight(0xf00555, 1.5);
   lights.position.set(0, 0, 3);
   lights.castShadow = true;
-  lights1 = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
   scene.add(lights);
-  // scene.add(lights1);
 
   // Updating
   const update = () => {
