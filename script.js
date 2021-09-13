@@ -27,7 +27,7 @@ function init(){
 
   // Geometry
   var sphere_geometry = new THREE.SphereGeometry(1, 128, 128);
-  var material = new THREE.MeshStandardMaterial();
+  var material = new THREE.MeshNormalMaterial();
 
   var sphere = new THREE.Mesh(sphere_geometry, material);
   scene.add(sphere);
